@@ -30,7 +30,7 @@ export default function HomePage() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1E2424] mb-5">
               Votre projet, notre savoir-faire
             </h2>
-            <p className="text-stone-600 leading-relaxed mb-7">
+            <p className="text-stone-600 leading-relaxed">
               PRO’DECO, entreprise de{" "}
               <strong className="text-[#1E2424]">rénovation intérieure</strong> à
               Saint-Martin-d’Hères, vous accompagne dans tous vos{" "}
@@ -39,12 +39,6 @@ export default function HomePage() {
               nouvelle vie à votre intérieur avec une équipe passionnée et
               expérimentée.
             </p>
-            <Link
-              href="#services"
-              className="inline-flex items-center gap-2 bg-[#0B7A75] hover:bg-[#085E5A] text-white text-sm font-medium px-6 py-3 rounded-full transition"
-            >
-              En savoir plus <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </section>
 
@@ -72,15 +66,9 @@ export default function HomePage() {
                   <h3 className="text-lg font-bold text-[#1E2424] mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-stone-600 mb-5 flex-grow">
+                  <p className="text-sm text-stone-600 flex-grow">
                     {service.description}
                   </p>
-                  <Link
-                    href={service.href}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B7A75] hover:underline"
-                  >
-                    En savoir plus <ArrowRight className="w-4 h-4" />
-                  </Link>
                 </div>
               </article>
             ))}

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
+const INSTAGRAM_URL =
+  "https://www.instagram.com/pro_deco38?lqvp=MzNvcjh3eTJ5Z3ls";
+
 export default function Footer() {
   return (
     <footer className="bg-[#222629] text-stone-300 pt-14 pb-8 text-sm">
@@ -62,7 +65,9 @@ export default function Footer() {
 
             {/* Instagram */}
             <a
-              href="#"
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="w-8 h-8 rounded-full bg-white text-[#222629] flex items-center justify-center hover:bg-[#12948D] hover:text-white transition"
             >
@@ -102,19 +107,6 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 pt-6 flex flex-col sm:flex-row justify-between text-xs text-stone-400 gap-4">
-        <p>© 2026 PRO’DECO. Tous droits réservés.</p>
-        <div className="flex gap-4">
-          <Link href="/mentions-legales" className="hover:text-white">
-            Mentions légales
-          </Link>
-          <span>|</span>
-          <Link href="/confidentialite" className="hover:text-white">
-            Politique de confidentialité
-          </Link>
         </div>
       </div>
     </footer>
