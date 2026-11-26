@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -7,6 +8,10 @@ import {
   Smile,
 } from "lucide-react";
 import RealisationsGallery from "@/components/RealisationsGallery";
+
+export const metadata: Metadata = {
+  title: "Nos réalisations",
+};
 
 const STATS = [
   {
@@ -35,11 +40,10 @@ export default function RealisationsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F8F7] text-[#1E2424] overflow-x-hidden">
       <main className="flex-grow">
-        {/* Hero Nos Réalisations */}
         <section className="relative h-[430px] md:h-[470px] flex items-center overflow-hidden bg-[#1E2424]">
           <img
             src="/images/chantier-bar-panoramique.jpg"
-            alt="Réalisations PRO'DECO"
+            alt="Réalisations PRO’DECO"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{ filter: "none" }}
           />
@@ -50,7 +54,7 @@ export default function RealisationsPage() {
               <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1E2424] tracking-tight leading-[1.08] mb-3">
                 Nos
                 <br />
-                Réalisations
+                réalisations
               </h1>
               <span className="block w-14 h-1 bg-[#0B7A75] mb-4" />
               <p className="text-base md:text-lg font-bold text-[#1E2424] leading-snug mb-6">
@@ -99,7 +103,7 @@ export default function RealisationsPage() {
             <div className="lg:col-span-4 h-44 lg:h-auto relative bg-white/10">
               <img
                 src="/images/chantier-papier-peint-bois.jpg"
-                alt="Décoration murale et agencement PRO'DECO"
+                alt="Décoration murale et agencement PRO’DECO"
                 className="w-full h-full object-cover opacity-85"
               />
               <div className="hidden lg:block absolute inset-y-0 right-0 w-24 bg-gradient-to-r from-transparent to-[#096E6A]" />

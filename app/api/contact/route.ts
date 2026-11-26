@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 const DESTINATION_EMAIL =
   process.env.CONTACT_TO_EMAIL ||
   process.env.SMTP_USER ||
-  "Info.prodeco1@gmail.com";
+  "info.prodeco1@gmail.com";
 
 function escapeHtml(value: string): string {
   return value
@@ -26,13 +26,13 @@ export async function POST(req: Request) {
     const sujet =
       typeof body?.sujet === "string" && body.sujet.trim()
         ? body.sujet.trim()
-        : "Nouveau message depuis le site PRO'DECO";
+        : "Nouveau message depuis le site PRO’DECO";
     const message =
       typeof body?.message === "string" ? body.message.trim() : "";
 
     if (!nom || !email || !message) {
       return NextResponse.json(
-        { error: "Veuillez renseigner votre nom, votre email et votre message." },
+        { error: "Veuillez renseigner votre nom, votre e-mail et votre message." },
         { status: 400 }
       );
     }
@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: "Veuillez saisir une adresse email valide." },
+        { error: "Veuillez saisir une adresse e-mail valide." },
         { status: 400 }
       );
     }
@@ -77,15 +77,15 @@ export async function POST(req: Request) {
     const safeMessage = escapeHtml(message).replaceAll("\n", "<br />");
 
     await transporter.sendMail({
-      from: `"PRO'DECO Contact" <${smtpUser}>`,
+      from: `"PRO’DECO Contact" <${smtpUser}>`,
       to: DESTINATION_EMAIL,
       replyTo: email,
-      subject: `[Contact PRO'DECO] ${sujet} — ${nom}`,
+      subject: `[Contact PRO’DECO] ${sujet} — ${nom}`,
       text: [
-        `Nouveau message reçu sur le site PRO'DECO`,
+        `Nouveau message reçu sur le site PRO’DECO`,
         `----------------------------------------`,
         `Nom : ${nom}`,
-        `Email : ${email}`,
+        `E-mail : ${email}`,
         `Téléphone : ${telephone || "Non renseigné"}`,
         `Sujet : ${sujet}`,
         ``,
@@ -94,9 +94,9 @@ export async function POST(req: Request) {
       ].join("\n"),
       html: `
         <div style="font-family: Arial, sans-serif; color: #1E2424; line-height: 1.6;">
-          <h2 style="color: #0B7A75; margin-bottom: 12px;">Nouveau message de contact — PRO'DECO</h2>
+          <h2 style="color: #0B7A75; margin-bottom: 12px;">Nouveau message de contact — PRO’DECO</h2>
           <p><strong>Nom :</strong> ${safeNom}</p>
-          <p><strong>Email :</strong> ${safeEmail}</p>
+          <p><strong>E-mail :</strong> ${safeEmail}</p>
           <p><strong>Téléphone :</strong> ${safeTelephone}</p>
           <p><strong>Sujet :</strong> ${safeSujet}</p>
           <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 16px 0;" />
@@ -111,9 +111,9 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Erreur envoi email contact:", error);
+    console.error("Erreur envoi e-mail contact:", error);
     return NextResponse.json(
-      { error: "Une erreur est survenue lors de l'envoi du message." },
+      { error: "Une erreur est survenue lors de l’envoi du message." },
       { status: 500 }
     );
   }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   ArrowRight,
   Bus,
@@ -11,15 +12,18 @@ import {
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
+export const metadata: Metadata = {
+  title: "Contact",
+};
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F7F6] text-[#1E2424] overflow-x-hidden">
       <main className="flex-grow">
-        {/* Hero Contact */}
         <section className="relative h-[430px] md:h-[470px] flex items-center overflow-hidden bg-[#1E2424]">
           <img
             src="/images/chantier-mezzanine-parquet.jpg"
-            alt="Contact PRO'DECO rénovation intérieure"
+            alt="Contact PRO’DECO rénovation intérieure"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{ filter: "none" }}
           />
@@ -57,7 +61,7 @@ export default function ContactPage() {
                 href="tel:0666010553"
                 className="text-sm text-stone-600 hover:text-[#0B7A75] transition"
               >
-                0666010553
+                06 66 01 05 53
               </a>
             </div>
 
@@ -65,13 +69,12 @@ export default function ContactPage() {
               <div className="w-11 h-11 rounded-full bg-[#0B7A75] text-white flex items-center justify-center mb-3 shadow-sm">
                 <Mail className="w-5 h-5" />
               </div>
-              <p className="text-sm font-bold text-[#1E2424] mb-1">Email</p>
+              <p className="text-sm font-bold text-[#1E2424] mb-1">E-mail</p>
               <a
-                href="mailto:contact@prodeco.fr"
+                href="mailto:info.prodeco1@gmail.com"
                 className="text-sm text-stone-600 hover:text-[#0B7A75] transition"
               >
-               Info.prodeco1@gmail.com
-
+                info.prodeco1@gmail.com
               </a>
             </div>
 
@@ -112,7 +115,7 @@ export default function ContactPage() {
           <div className="lg:col-span-6 bg-white rounded-2xl shadow-lg shadow-stone-200/70 border border-stone-100 overflow-hidden">
             <div className="relative h-72 sm:h-80 w-full bg-stone-100">
               <iframe
-                title="Carte PRO'DECO Saint-Martin-d'Hères"
+                title="Carte PRO’DECO Saint-Martin-d’Hères"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=5.70%2C45.15%2C5.80%2C45.21&layer=mapnik&marker=45.176%2C5.756"
                 className="w-full h-full border-0"
                 loading="lazy"
@@ -158,7 +161,7 @@ export default function ContactPage() {
                   <Bus className="w-5 h-5 text-[#0B7A75] shrink-0 mt-0.5" />
                   <div>
                     <p className="text-xs font-bold text-[#1E2424]">En transports</p>
-                    <p className="text-xs text-stone-500">Lignes TAG</p>
+                    <p className="text-xs text-stone-500">Réseau M réso</p>
                   </div>
                 </div>
               </div>

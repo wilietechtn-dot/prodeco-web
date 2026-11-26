@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,6 +9,10 @@ import {
   Phone,
 } from "lucide-react";
 import DevisForm from "@/components/DevisForm";
+
+export const metadata: Metadata = {
+  title: "Devis",
+};
 
 const STEPS = [
   {
@@ -31,11 +36,10 @@ export default function DevisPage() {
   return (
     <div className="flex-grow flex flex-col bg-[#F5F7F6] text-[#1E2424] overflow-x-hidden">
       <main className="flex-grow">
-        {/* Hero Demander un devis */}
         <section className="relative h-[380px] md:h-[420px] flex items-center overflow-hidden bg-[#1E2424]">
           <img
             src="/images/hero-salon.jpg"
-            alt="Demander un devis de rénovation intérieure PRO'DECO"
+            alt="Demander un devis de rénovation intérieure PRO’DECO"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{ filter: "none" }}
           />
@@ -53,33 +57,31 @@ export default function DevisPage() {
               <p className="text-base md:text-lg font-bold text-[#1E2424] leading-snug">
                 Remplissez le formulaire ci-dessous : votre projet est transmis
                 directement à{" "}
-                <span className="text-[#0B7A75]">Info.prodeco1@gmail.com</span>.
+                <span className="text-[#0B7A75]">info.prodeco1@gmail.com</span>.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Contenu principal : Formulaire + Informations & Étapes */}
         <section className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-7">
             <DevisForm />
           </div>
 
           <div className="lg:col-span-5 space-y-6">
-            {/* Carte coordonnées directes */}
             <div className="bg-white rounded-2xl shadow-md shadow-stone-200/70 border border-stone-100 p-6">
               <h2 className="font-serif text-xl font-bold text-[#1E2424] mb-4">
                 Coordonnées directes
               </h2>
               <div className="space-y-3.5 text-sm text-stone-600">
                 <a
-                  href="mailto:Info.prodeco1@gmail.com"
+                  href="mailto:info.prodeco1@gmail.com"
                   className="flex items-center gap-3 hover:text-[#0B7A75] transition"
                 >
                   <span className="w-9 h-9 rounded-full bg-teal-50 text-[#0B7A75] flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4" />
                   </span>
-                  <span>Info.prodeco1@gmail.com</span>
+                  <span>info.prodeco1@gmail.com</span>
                 </a>
 
                 <a
@@ -89,7 +91,7 @@ export default function DevisPage() {
                   <span className="w-9 h-9 rounded-full bg-teal-50 text-[#0B7A75] flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4" />
                   </span>
-                  <span>0666010553</span>
+                  <span>06 66 01 05 53</span>
                 </a>
 
                 <div className="flex items-center gap-3">
@@ -103,12 +105,11 @@ export default function DevisPage() {
                   <span className="w-9 h-9 rounded-full bg-teal-50 text-[#0B7A75] flex items-center justify-center shrink-0">
                     <Clock className="w-4 h-4" />
                   </span>
-                  <span>Lun – Ven : 8h – 18h</span>
+                  <span>Lun – Ven : 9h – 18h</span>
                 </div>
               </div>
             </div>
 
-            {/* Comment ça se passe */}
             <div className="bg-white rounded-2xl shadow-md shadow-stone-200/70 border border-stone-100 p-6">
               <h2 className="font-serif text-xl font-bold text-[#1E2424] mb-4">
                 Comment ça se passe ?

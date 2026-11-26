@@ -1,11 +1,13 @@
+import type { Metadata } from "next";
 import { Hero, TrustBar } from "@/components/Hero";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import { SERVICES, TESTIMONIALS, GALLERY_IMAGES } from "@/data/siteData";
 import Link from "next/link";
-import { ArrowRight, MessageCircle, Star } from "lucide-react";
+import { ArrowRight, MessageSquare, Phone, Star } from "lucide-react";
 
-const WHATSAPP_URL =
-  "https://wa.me/33666010553?text=Bonjour%20PRO%27DECO%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20un%20projet%20de%20r%C3%A9novation.";
+export const metadata: Metadata = {
+  title: "Accueil",
+};
 
 export default function HomePage() {
   return (
@@ -30,7 +32,7 @@ export default function HomePage() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1E2424] mb-5">
               Votre projet, notre savoir-faire
             </h2>
-            <p className="text-stone-600 leading-relaxed">
+            <p className="text-stone-600 leading-relaxed mb-7">
               PRO’DECO, entreprise de{" "}
               <strong className="text-[#1E2424]">rénovation intérieure</strong> à
               Saint-Martin-d’Hères, vous accompagne dans tous vos{" "}
@@ -39,6 +41,12 @@ export default function HomePage() {
               nouvelle vie à votre intérieur avec une équipe passionnée et
               expérimentée.
             </p>
+            <Link
+              href="#services"
+              className="inline-flex items-center gap-2 bg-[#0B7A75] hover:bg-[#085E5A] text-white text-sm font-medium px-6 py-3 rounded-full transition"
+            >
+              En savoir plus <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </section>
 
@@ -66,9 +74,15 @@ export default function HomePage() {
                   <h3 className="text-lg font-bold text-[#1E2424] mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-stone-600 flex-grow">
+                  <p className="text-sm text-stone-600 mb-5 flex-grow">
                     {service.description}
                   </p>
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B7A75] hover:underline"
+                  >
+                    En savoir plus <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </article>
             ))}
@@ -127,7 +141,7 @@ export default function HomePage() {
               <div key={i} className="h-52 rounded-lg overflow-hidden shadow-sm">
                 <img
                   src={src}
-                  alt={`Réalisation PRO'DECO ${i + 1}`}
+                  alt={`Réalisation PRO’DECO ${i + 1}`}
                   className="w-full h-full object-cover hover:scale-105 transition duration-300"
                 />
               </div>
@@ -142,17 +156,21 @@ export default function HomePage() {
                 Parlons de votre projet
               </h2>
               <p className="text-teal-50 text-sm">
-                Contactez-nous dès aujourd’hui pour obtenir un devis personnalisé.
+                Appelez-nous, envoyez un message ou demandez un devis personnalisé.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:0666010553"
                 className="inline-flex items-center gap-2 bg-[#064A47] hover:bg-[#053B38] text-white text-sm font-semibold px-5 py-3 rounded-full border border-white/25 transition"
               >
-                <MessageCircle className="w-4 h-4" /> WhatsApp
+                <Phone className="w-4 h-4" /> Appeler
+              </a>
+              <a
+                href="sms:0666010553"
+                className="inline-flex items-center gap-2 bg-[#064A47] hover:bg-[#053B38] text-white text-sm font-semibold px-5 py-3 rounded-full border border-white/25 transition"
+              >
+                <MessageSquare className="w-4 h-4" /> Message
               </a>
               <Link
                 href="/contact#formulaire-contact"

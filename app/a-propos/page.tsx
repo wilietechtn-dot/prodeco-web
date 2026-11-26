@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -7,6 +8,10 @@ import {
   Home,
   Users,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "À propos",
+};
 
 const PILLARS = [
   {
@@ -35,11 +40,10 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F8F7] text-[#1E2424] overflow-x-hidden">
       <main className="flex-grow">
-        {/* Bannière Hero À propos */}
         <section className="relative h-[430px] md:h-[470px] flex items-center overflow-hidden bg-[#1E2424]">
           <img
             src="/images/chantier-mezzanine-parquet.jpg"
-            alt="Rénovation intérieure et mezzanine par PRO'DECO"
+            alt="Rénovation intérieure et mezzanine par PRO’DECO"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{ filter: "none" }}
           />
@@ -67,7 +71,7 @@ export default function AboutPage() {
             <div className="w-64 sm:w-72 h-72 sm:h-80 rounded-3xl overflow-hidden border-[6px] border-white shadow-xl -rotate-3 -translate-x-10 -translate-y-4 z-10 bg-stone-200">
               <img
                 src="/images/chantier-escalier-rouge.jpg"
-                alt="Escalier et peinture PRO'DECO"
+                alt="Escalier et peinture PRO’DECO"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -79,7 +83,7 @@ export default function AboutPage() {
             <div className="w-52 sm:w-60 h-44 sm:h-48 rounded-2xl overflow-hidden border-[6px] border-white shadow-xl rotate-3 absolute bottom-4 right-6 sm:right-12 z-20 bg-stone-200">
               <img
                 src="/images/chantier-chambre-verte.jpg"
-                alt="Finitions peinture intérieure PRO'DECO"
+                alt="Finitions peinture intérieure PRO’DECO"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -183,7 +187,7 @@ export default function AboutPage() {
             <div className="relative h-72 sm:h-96 rounded-3xl overflow-hidden shadow-xl border-[6px] border-white">
               <img
                 src="/images/chantier-cuisine-noire.jpg"
-                alt="Cuisine rénovée par PRO'DECO"
+                alt="Cuisine rénovée par PRO’DECO"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -195,7 +199,7 @@ export default function AboutPage() {
             <div className="lg:col-span-4 h-44 lg:h-auto relative bg-white/10">
               <img
                 src="/images/chantier-couloir-apres.jpg"
-                alt="Couloir rénové PRO'DECO"
+                alt="Couloir rénové PRO’DECO"
                 className="w-full h-full object-cover opacity-85"
               />
               <div className="hidden lg:block absolute inset-y-0 right-0 w-24 bg-gradient-to-r from-transparent to-[#096E6A]" />

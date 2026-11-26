@@ -1,12 +1,8 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
   BrickWall,
-  ChevronDown,
-  ChevronUp,
   Clock,
   Gem,
   Handshake,
@@ -16,6 +12,11 @@ import {
   PaintRoller,
   Users,
 } from "lucide-react";
+import ServicesHeroDropdown from "@/components/ServicesHeroDropdown";
+
+export const metadata: Metadata = {
+  title: "Nos services",
+};
 
 interface PrestationItem {
   id: string;
@@ -59,14 +60,6 @@ const PRESTATIONS: PrestationItem[] = [
   },
 ];
 
-const DROPDOWN_LIST = [
-  "Toutes nos prestations",
-  "Peinture intérieure",
-  "Isolation intérieure",
-  "Revêtements de sols",
-  "Rénovation complète",
-];
-
 const EXPERTISE_ITEMS = [
   {
     icon: Gem,
@@ -96,17 +89,13 @@ const EXPERTISE_ITEMS = [
 ];
 
 export default function ServicesPage() {
-  const [listOpen, setListOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState("Toutes nos prestations");
-
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F8F7] text-[#1E2424] overflow-x-hidden">
       <main className="flex-grow">
-        {/* Bannière Hero Nos services */}
         <section className="relative h-[430px] md:h-[470px] flex items-center overflow-hidden bg-[#1E2424]">
           <img
             src="/images/hero-salon.jpg"
-            alt="Nos services de rénovation intérieure PRO'DECO"
+            alt="Nos services de rénovation intérieure PRO’DECO"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{ filter: "none" }}
           />
@@ -124,51 +113,7 @@ export default function ServicesPage() {
                 rénover et embellir vos espaces
               </p>
 
-              {/* Liste déroulante simple sans redirection */}
-              <div className="relative inline-block text-left">
-                <button
-                  type="button"
-                  onClick={() => setListOpen((prev) => !prev)}
-                  className="inline-flex items-center gap-2 bg-[#0B7A75] hover:bg-[#085E5A] text-white text-sm font-semibold px-6 py-3 rounded-full transition shadow-md cursor-pointer"
-                >
-                  <span>Nos services</span>
-                  {listOpen ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
-
-                {listOpen && (
-                  <ul
-                    role="menu"
-                    className="absolute left-0 mt-2 w-64 rounded-2xl bg-white py-2 shadow-lg border border-stone-100 z-50"
-                  >
-                    {DROPDOWN_LIST.map((item) => {
-                      const isSelected = selectedItem === item;
-                      return (
-                        <li key={item} role="none">
-                          <button
-                            type="button"
-                            role="menuitem"
-                            onClick={() => {
-                              setSelectedItem(item);
-                              setListOpen(false);
-                            }}
-                            className={`w-full text-left px-5 py-3 text-base transition cursor-pointer ${
-                              isSelected
-                                ? "bg-[#E9F7F5] text-[#0B7A75] font-medium"
-                                : "text-[#222629] hover:bg-stone-50"
-                            }`}
-                          >
-                            {item}
-                          </button>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </div>
+              <ServicesHeroDropdown />
             </div>
           </div>
         </section>
@@ -231,7 +176,7 @@ export default function ServicesPage() {
               <div className="w-56 sm:w-64 h-64 sm:h-72 rounded-3xl overflow-hidden border-[6px] border-white shadow-xl -rotate-12 -translate-x-14 sm:-translate-x-20 z-10">
                 <img
                   src="/images/chantier-bureau-vert.jpg"
-                  alt="Peinture et finitions PRO'DECO"
+                  alt="Peinture et finitions PRO’DECO"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -303,7 +248,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-4 h-48 lg:h-auto relative">
               <img
                 src="/images/chantier-cuisine-noire-2.jpg"
-                alt="Intérieur rénové PRO'DECO"
+                alt="Intérieur rénové PRO’DECO"
                 className="w-full h-full object-cover"
               />
               <div className="hidden lg:block absolute inset-y-0 right-0 w-24 bg-gradient-to-r from-transparent to-[#08635F]" />

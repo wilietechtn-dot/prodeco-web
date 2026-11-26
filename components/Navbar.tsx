@@ -39,7 +39,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-        {/* Logo */}
         <Link
           href="/"
           className="flex items-center gap-2.5 shrink-0"
@@ -47,7 +46,7 @@ export default function Navbar() {
         >
           <img
             src="/images/logo.png"
-            alt="Logo PRO'DECO"
+            alt="Logo PRO’DECO"
             className="h-10 sm:h-11 w-auto object-contain"
           />
           <div className="leading-tight">
@@ -60,7 +59,6 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Navigation Desktop */}
         <nav
           aria-label="Navigation principale"
           className="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700"
@@ -87,7 +85,6 @@ export default function Navbar() {
             À propos
           </Link>
 
-          {/* Lien vers /services + liste déroulante simple sans redirection */}
           <div
             className="relative"
             onMouseEnter={() => setServicesDropdownOpen(true)}
@@ -160,7 +157,7 @@ export default function Navbar() {
                 : "hover:text-[#0B7A75] transition"
             }
           >
-            Réalisations
+            Nos réalisations
           </Link>
 
           <Link
@@ -175,7 +172,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Bouton CTA Desktop + Bouton Burger Mobile */}
         <div className="flex items-center gap-3">
           <Link
             href="/devis"
@@ -204,7 +200,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menu Mobile dépliable */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-stone-100 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col space-y-1 text-base font-medium text-stone-700">
@@ -230,7 +225,6 @@ export default function Navbar() {
               À propos
             </Link>
 
-            {/* Lien vers /services + accordéon liste simple sans redirection sur mobile */}
             <div>
               <div
                 className={`flex items-center justify-between px-3 py-2.5 rounded-lg transition ${
@@ -291,7 +285,7 @@ export default function Navbar() {
                   : "hover:bg-stone-50 hover:text-[#0B7A75]"
               }`}
             >
-              Réalisations
+              Nos réalisations
             </Link>
 
             <Link

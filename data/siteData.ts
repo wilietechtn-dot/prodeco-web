@@ -30,7 +30,7 @@ export const SERVICES: ServiceItem[] = [
     description:
       "Mise en peinture de murs, plafonds, boiseries et pose de papiers peints décoratifs avec finitions soignées.",
     image: "/images/chantier-chambre-verte.jpg",
-    href: "/services/peinture",
+    href: "/services",
   },
   {
     id: "sols",
@@ -38,7 +38,7 @@ export const SERVICES: ServiceItem[] = [
     description:
       "Pose de parquets chaleureux, sols stratifiés ou carrelages durables adaptés à chaque pièce de vie.",
     image: "/images/chantier-mezzanine-parquet.jpg",
-    href: "/services/revetements-sols",
+    href: "/services",
   },
   {
     id: "renovation-complete",
@@ -46,7 +46,7 @@ export const SERVICES: ServiceItem[] = [
     description:
       "Accompagnement global pour la transformation de cuisines, espaces commerciaux et intérieurs complets.",
     image: "/images/chantier-cuisine-noire.jpg",
-    href: "/services/renovation-complete",
+    href: "/services",
   },
 ];
 
@@ -81,7 +81,7 @@ export const BEFORE_AFTER_PROJECTS: BeforeAfterItem[] = [
   {
     id: "couloir",
     title: "Couloir & boiseries",
-    category: "Peinture & Rénovation",
+    category: "Peinture & rénovation",
     beforeImage: "/images/chantier-couloir-bois-avant.jpg",
     afterImage: "/images/chantier-couloir-apres.jpg",
     description:
@@ -107,9 +107,7 @@ export const GALLERY_IMAGES: string[] = [
   "/images/chantier-mezzanine-parquet.jpg",
   "/images/chantier-cuisine-bleue.jpg",
   "/images/chantier-cuisine-noire.jpg",
-  "/images/chantier-cuisine-noire-2.jpg",
   "/images/chantier-entrepot-apres.jpg",
-  "/images/chantier-couloir-bois-avant.jpg",
   "/images/chantier-couloir-apres.jpg",
   "/images/chantier-entrepot-avant.jpg",
   "/images/chantier-bureau-vert.jpg",
